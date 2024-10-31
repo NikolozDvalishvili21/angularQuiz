@@ -1,0 +1,19 @@
+<table>
+  <caption style="font-weight: 700; font-size: 40px; margin-bottom: 50px">
+    Orders
+  </caption>
+  <tr>
+    <th>Team Member</th>
+    <th>Loading</th>
+    <th>Billable</th>
+    <th>Efficiency</th>
+  </tr>
+  <tr *ngFor="let order of order" style="cursor: pointer">
+    <td>{{ order.name }}</td>
+    <td [ngStyle]="{ color: loadingStatus(order) }">{{ order.loading }}</td>
+    <td>{{ order.billable }}</td>
+    <td>{{ order.efficiency }}</td>
+  </tr>
+</table>
+
+<p style="font-weight: 700;">Total Orders: {{ orderCount() }}</p>
